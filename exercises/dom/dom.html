@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+    <link rel="stylesheet" href="domStyle.css">
+  </head>
+  <body>
+    <p>Clicker</p>
+    <div class="clickerDiv">
+      <button
+      class="clicker"
+      onclick="clickButton()"
+      onkeydown="cheatCode(event.key)">
+        0
+      </button>
+      <div class="explanation">Click to add score</div>
+    </div>
+    <div>
+      <p style="display: inline-block;">Best score : </p>
+      <p style="display: inline-block;" class="bestScore">0</p>
+    </div>
+    <div>
+      <p style="display: inline-block;">Total clicks : </p>
+      <p style="display: inline-block;" class="totalClick">0</p>
+    </div>
+    <div>
+      <button onclick="resetCount()";>Reset</button>
+    </div>
+    <script>
+      let bestScore = localStorage.getItem('bestScore') || 0
+      let totalClick = localStorage.getItem('totalClick') || 0
+      document.querySelector('.bestScore').innerHTML = bestScore
+      document.querySelector('.totalClick').innerHTML = totalClick
+      function clickButton() {
+        totalClick++
+        localStorage.setItem('totalClick', totalClick)
+        document.querySelector('.totalClick').innerHTML = totalClick
+        const clickNumber = document.querySelector('.clicker')
+        clickNumber.innerHTML++
+        if (clickNumber.classList.contains('clickerButtonChangeColor')) {clickNumber.classList.remove('clickerButtonChangeColor')}
+        else {clickNumber.classList.add('clickerButtonChangeColor')}
+        if (Number(clickNumber.innerHTML) > Number(bestScore)) {
+          bestScore++
+          localStorage.setItem('bestScore', bestScore)
+          document.querySelector('.bestScore').innerHTML = bestScore
+        }
+      }
+
+      function resetCount() {
+        totalClick = 0; bestScore = 0; clickNumber = 0;
+        document.querySelector('.bestScore').innerHTML = bestScore
+        document.querySelector('.totalClick').innerHTML = totalClick
+        document.querySelector('.clicker').innerHTML = 0
+      }
+
+      function cheatCode(n) {
+        if (n!=NaN) {
+          for (let i=0; i<n; i++) {clickButton()}
+        }
+      }
+
+    </script>
+  </body>
+</html>

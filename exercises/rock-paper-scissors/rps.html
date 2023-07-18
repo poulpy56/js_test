@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+    <link rel="stylesheet" href="rps.css">
+  </head>
+  <body>
+    <p class="title">Rock Paper Scissors</p>
+    <button class="buttonMove" onclick="playGame('Rock')"><img class="pic" src="rock-emoji.png"></button>
+    <button class="buttonMove" onclick="playGame('Paper')"><img class="pic" src="paper-emoji.png"></button>
+    <button class="buttonMove" onclick="playGame('Scissors')"><img class="pic" src="scissors-emoji.png"></button>
+    <p class="actualMove"></p>
+    <p class="scorePrinted"></p>
+    <button class="resetButton" onclick="score.wins = 0; score.losses = 0; score.ties = 0; localStorage.setItem('score', JSON.stringify(score)); scorePrinted.innerHTML = `wins : ${score.wins} ; losses : ${score.losses} ; ties : ${score.ties}`;  moveResult.innerHTML = '';
+    ">Reset</button>
+    <script src="rps.js"></script>
+  </body>
+</html>
