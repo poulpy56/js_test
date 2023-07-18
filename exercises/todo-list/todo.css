@@ -1,0 +1,63 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: rgb(200, 200, 200);
+  font-family: Arial;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.todo_list {
+  border: 1px solid rgb(200, 200, 200);
+  padding: 20px;
+}
+
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.title {
+  margin: 20px 0px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.newTaskBar {
+  border-radius: 10px;
+  border-width: 0px;
+  background-color: rgb(200, 200, 200);
+  padding: 3px 10px;
+  width: 78%;
+}
+
+.addTaskButton {
+  border-radius: 10px;
+  border-width: 0px;
+  padding: 3px 5px;
+  background-color: rgb(200, 200, 200);
+  width: 13%;
+}
+
+.taskList {
+  border: 1px solid rgb(200, 200, 200);
+  margin-top: 30px;
+}
+
+.taskAndDelete {
+  padding: 5px;
+}
+
+.taskToDo{
+  display: inline-block;
+  background-color: rgb(232, 232, 232);
+  color: rgb(25, 25, 25);
+  padding: 2px 5px;
+}
+
+.deleteButton {
+  background-color: rgb(232, 232, 232);
+  border-width: 0px;
+  font-weight: bold;
+}

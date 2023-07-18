@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo list</title>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <div class="todo_list">
+      <p class="title">Todo list 1</p>
+      <div>
+        <input class="newTaskBar" placeholder="New task" onkeydown="if (event.key==='Enter'){addToDo()}">
+        <button class="addTaskButton" onclick="addToDo()">Add</button>
+      </div>
+      <div class="taskList">
+        
+      </div>
+    </div>
+    <div class="todo_list">
+      <p class="title">Todo list 2</p>
+    </div>
+    <div class="todo_list">
+      <p class="title">Todo list 3</p>
+    </div>
+    <div class="todo_list">
+      <p class="title">Todo list 4</p>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>
