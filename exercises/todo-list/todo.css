@@ -5,6 +5,26 @@ body {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 10px;
+  padding-top: 40px;
+}
+
+header {
+  position: fixed;
+  background-color: rgb(47, 47, 47);
+  height: 30px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  display: flex;
+  justify-content: right;
+}
+
+.addToDoListButton {
+  margin: 5px;
+  border-radius: 5px;
+  padding: 2px 5px;
 }
 
 button {
@@ -34,12 +54,22 @@ button:active {
   border-radius: 3px;
   padding: 20px;
   min-height: 180px;
+  position: relative;
 }
 
 .title {
   margin: 20px 0px;
   font-size: 40px;
   text-align: center;
+}
+
+.toDoListDeleteButton {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  padding: 0px 5px;
+  border-radius: 5px;
+  font-size: 20px;
 }
 
 .createTask {
@@ -90,7 +120,7 @@ input {
 }
 
 .taskToDo{
-  background-color: rgb(85, 85, 85);
+  background-color: rgb(122, 122, 122);
   color: rgb(200, 200, 200);
   padding: 2px 5px;
   width: 86%;
@@ -112,22 +142,4 @@ input {
   padding: 2px 5px;
   width: 10%;
   min-width: 50px;
-}
-
-.addToDoListButton {
-  position: fixed;
-  right: 5px;
-  top: 5px;
-  border-radius: 5px;
-  padding: 2px 5px;
-}
-
-.addToDoListButton:hover {
-  opacity: 1;
-  background-color: rgb(80, 38, 122);
-}
-
-.addToDoListButton:active {
-  background-color: rgb(66, 32, 101);
-  opacity: 1;
 }
