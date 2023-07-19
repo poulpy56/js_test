@@ -7,12 +7,12 @@
   <body>
     <div class="todo_list">
       <p class="title">Todo list 1</p>
-      <div>
+      <div class="createTask">
         <input class="newTaskBar" placeholder="New task" onkeydown="if (event.key==='Enter'){addToDo()}">
+        <input type="date" class="newTaskDate">
         <button class="addTaskButton" onclick="addToDo()">Add</button>
       </div>
       <div class="taskList">
-        
       </div>
     </div>
     <div class="todo_list">
@@ -24,6 +24,7 @@
     <div class="todo_list">
       <p class="title">Todo list 4</p>
     </div>
+    <button class="addToDoListButton">Add to do list</button>
     <script src="todo.js"></script>
   </body>
 </html>
